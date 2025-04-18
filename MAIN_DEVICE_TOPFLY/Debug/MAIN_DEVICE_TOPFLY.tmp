@@ -1,0 +1,40 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.8</VERSION>
+ <DEVICE>"ATmega16A"</DEVICE>
+ <WORKING_DIR>C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\MAIN_DEVICE_TOPFLY\MAIN_DEVICE_TOPFLY\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\MAIN_DEVICE_TOPFLY\MAIN_DEVICE_TOPFLY\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m16Adef.inc</FILE>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\M16ADEF.INC</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\MAIN_DEVICE_TOPFLY\MAIN_DEVICE_TOPFLY\Debug\MAIN_DEVICE_TOPFLY.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>MAIN_DEVICE_TOPFLY.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>MAIN_DEVICE_TOPFLY.map</FILE>
+  <FILE>MAIN_DEVICE_TOPFLY.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <INICIO><FILE>C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\MAIN_DEVICE_TOPFLY\MAIN_DEVICE_TOPFLY\main.asm</FILE><LINE>13</LINE></INICIO>
+  <USART><FILE>C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\MAIN_DEVICE_TOPFLY\MAIN_DEVICE_TOPFLY\main.asm</FILE><LINE>105</LINE></USART>
+  <VACIADO><FILE>C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\MAIN_DEVICE_TOPFLY\MAIN_DEVICE_TOPFLY\main.asm</FILE><LINE>99</LINE></VACIADO>
+  <RETRASO><FILE>C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\MAIN_DEVICE_TOPFLY\MAIN_DEVICE_TOPFLY\main.asm</FILE><LINE>122</LINE></RETRASO>
+  <TX_DATO_10><FILE>C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\MAIN_DEVICE_TOPFLY\MAIN_DEVICE_TOPFLY\main.asm</FILE><LINE>33</LINE></TX_DATO_10>
+  <TX_DATO_11><FILE>C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\MAIN_DEVICE_TOPFLY\MAIN_DEVICE_TOPFLY\main.asm</FILE><LINE>39</LINE></TX_DATO_11>
+  <TX_DATO_12><FILE>C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\MAIN_DEVICE_TOPFLY\MAIN_DEVICE_TOPFLY\main.asm</FILE><LINE>47</LINE></TX_DATO_12>
+  <TX_DATO_13><FILE>C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\MAIN_DEVICE_TOPFLY\MAIN_DEVICE_TOPFLY\main.asm</FILE><LINE>55</LINE></TX_DATO_13>
+  <TX_DATO_20><FILE>C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\MAIN_DEVICE_TOPFLY\MAIN_DEVICE_TOPFLY\main.asm</FILE><LINE>63</LINE></TX_DATO_20>
+  <TX_DATO_21><FILE>C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\MAIN_DEVICE_TOPFLY\MAIN_DEVICE_TOPFLY\main.asm</FILE><LINE>68</LINE></TX_DATO_21>
+  <TX_DATO_22><FILE>C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\MAIN_DEVICE_TOPFLY\MAIN_DEVICE_TOPFLY\main.asm</FILE><LINE>76</LINE></TX_DATO_22>
+  <TX_DATO_23><FILE>C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\MAIN_DEVICE_TOPFLY\MAIN_DEVICE_TOPFLY\main.asm</FILE><LINE>84</LINE></TX_DATO_23>
+  <ESPERACOMP><FILE>C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\MAIN_DEVICE_TOPFLY\MAIN_DEVICE_TOPFLY\main.asm</FILE><LINE>131</LINE></ESPERACOMP>
+ </LABELS>
+</ASSEMBLER_INFO>
