@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.2.8  C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\MAIN_DEVICE_TOPFLY\MAIN_DEVICE_TOPFLY\main.asm Sun Apr 20 19:24:14 2025
+AVRASM ver. 2.2.8  C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\MAIN_DEVICE_TOPFLY\MAIN_DEVICE_TOPFLY\main.asm Thu Apr 24 21:19:49 2025
 
 [builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m16Adef.inc'
 C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\MAIN_DEVICE_TOPFLY\MAIN_DEVICE_TOPFLY\main.asm(10): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\M16ADEF.INC'
@@ -1045,19 +1045,28 @@ C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\MAI
 000068 ef0f                      	LDI			R16,0B11111111		;TIEMPO DE RETRASO
 000069 bf0c                      	OUT			OCR0,R16
                                  
+                                 TEMPORIZADOR:
+00006a e000                      	LDI			R16,0B00000000
+00006b bd0f                      	OUT			TCCR1A,R16
+00006c e00f                      	LDI			R16,0B00001111
+00006d bd0e                      	OUT			TCCR1B,R16
+00006e ef0f                      	LDI			R16,0B11111111
+00006f bd0b                      	OUT			OCR1AH,R16
+000070 bd0a                      	OUT			OCR1AL,R16
+                                 
                                  ESPERACOMP:
-00006a b728                      	IN			R18,TIFR
-00006b ff21                      	SBRS		R18,1
-00006c 940c 006a                 	JMP			ESPERACOMP
-00006e e002                      	LDI			R16,0B00000010
-00006f bf08                      	OUT			TIFR,R16
-000070 e000                      	LDI			R16,0B00000000
-000071 bf03                      	OUT			TCCR0,R16
-000072 bf08                      	OUT			TIFR,R16
-000073 bf0c                      	OUT			OCR0,R16
-000074 bf02                      	OUT			TCNT0,R16
-000075 e020                      	LDI			R18,0B00000000
-000076 0000                      	NOP
+000071 b728                      	IN			R18,TIFR
+000072 ff21                      	SBRS		R18,1
+000073 940c 0071                 	JMP			ESPERACOMP
+000075 e002                      	LDI			R16,0B00000010
+000076 bf08                      	OUT			TIFR,R16
+000077 e000                      	LDI			R16,0B00000000
+000078 bf03                      	OUT			TCCR0,R16
+000079 bf08                      	OUT			TIFR,R16
+00007a bf0c                      	OUT			OCR0,R16
+00007b bf02                      	OUT			TCNT0,R16
+00007c e020                      	LDI			R18,0B00000000
+00007d 0000                      	NOP
 
 
 RESOURCE USE INFORMATION
@@ -1077,7 +1086,7 @@ counted separately from r26..r31 here.
 "ATmega16A" register use summary:
 x  :   0 y  :   0 z  :   0 r0 :   0 r1 :   0 r2 :   0 r3 :   0 r4 :   0 
 r5 :   0 r6 :   0 r7 :   0 r8 :   0 r9 :   0 r10:   0 r11:   0 r12:   0 
-r13:   0 r14:   0 r15:   0 r16:  51 r17:   1 r18:   4 r19:   1 r20:   0 
+r13:   0 r14:   0 r15:   0 r16:  58 r17:   1 r18:   4 r19:   1 r20:   0 
 r21:   0 r22:   0 r23:   0 r24:   0 r25:   0 r26:   0 r27:   0 r28:   0 
 r29:   0 r30:   0 r31:   0 
 Registers used: 4 out of 35 (11.4%)
@@ -1093,9 +1102,9 @@ clc   :   0 clh   :   0 cli   :   0 cln   :   0 clr   :   3 cls   :   0
 clt   :   0 clv   :   0 clz   :   0 com   :   0 cp    :   0 cpc   :   0 
 cpi   :   0 cpse  :   0 dec   :   0 eor   :   0 fmul  :   0 fmuls :   0 
 fmulsu:   0 icall :   0 ijmp  :   0 in    :   1 inc   :   0 jmp   :   9 
-ld    :   0 ldd   :   0 ldi   :  25 lds   :   0 lpm   :   0 lsl   :   0 
+ld    :   0 ldd   :   0 ldi   :  28 lds   :   0 lpm   :   0 lsl   :   0 
 lsr   :   0 mov   :   0 movw  :   0 mul   :   0 muls  :   0 mulsu :   0 
-neg   :   0 nop   :   1 or    :   0 ori   :   0 out   :  27 pop   :   0 
+neg   :   0 nop   :   1 or    :   0 ori   :   0 out   :  31 pop   :   0 
 push  :   0 rcall :   0 ret   :   3 reti  :   0 rjmp  :   0 rol   :   0 
 ror   :   0 sbc   :   0 sbci  :   0 sbi   :   7 sbic  :   0 sbis  :   7 
 sbiw  :   0 sbr   :   0 sbrc  :   0 sbrs  :   1 sec   :   0 seh   :   0 
@@ -1107,7 +1116,7 @@ Instructions used: 12 out of 113 (10.6%)
 "ATmega16A" memory use summary [bytes]:
 Segment   Begin    End      Code   Data   Used    Size   Use%
 ---------------------------------------------------------------
-[.cseg] 0x000000 0x0000f0    240      0    240   16384   1.5%
+[.cseg] 0x000000 0x0000fe    254      0    254   16384   1.6%
 [.dseg] 0x000060 0x000060      0      0      0    1024   0.0%
 [.eseg] 0x000000 0x000000      0      0      0     512   0.0%
 
