@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.2.8  C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\MAIN_DEVICE_TOPFLY\MAIN_DEVICE_TOPFLY\main.asm Fri Apr 25 06:23:12 2025
+AVRASM ver. 2.2.8  C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\MAIN_DEVICE_TOPFLY\MAIN_DEVICE_TOPFLY\main.asm Fri Apr 25 22:53:57 2025
 
 [builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m16Adef.inc'
 C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\MAIN_DEVICE_TOPFLY\MAIN_DEVICE_TOPFLY\main.asm(11): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\M16ADEF.INC'
@@ -926,10 +926,8 @@ C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\MAI
                                  #endif  /* _M16ADEF_INC_ */
                                  
                                  .CSEG
-                                 .ORG			0
-000000 940c 000e                 JMP				INICIO
-                                 
-00000c 940c 0091                 .ORG			$00C		JMP		TX
+000000 940c 000e                 .ORG			0			JMP		INICIO
+00000c 940c 0051                 .ORG			$00C		JMP		TX
                                  
                                  INICIO:
 00000e e004                          LDI			R16,HIGH(RAMEND)
@@ -947,147 +945,148 @@ C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\MAI
 00001a 2711                      	CLR			R17
 00001b 2722                      	CLR			R18
 00001c 2733                      	CLR			R19	
-00001d 940e 0067                 	CALL		USART
-00001f 940e 0063                 	CALL		VACIADO
-000021 940e 0072                 	CALL		RETRASO
-                                 	;CALL		TEMPORIZADOR
-                                 		
-                                 TX_DATO_10:	
-000023 9aa8                      	SBI			PORTC,0					;INICIO TX
-000024 e301                      	LDI			R16,0X31				;CARGA DEL DATO A ENVIAR
-000025 b90c                      	OUT			UDR,R16
-000026 940e 0063                 	CALL		VACIADO
-                                 	
-                                 	TX_DATO_11:
-000028 9b5e                      		SBIS		UCSRA,6
-000029 940c 0028                 		JMP			TX_DATO_11
-00002b 9a5e                      		SBI			UCSRA,6	
-00002c e001                      		LDI			R16,0X01		;CARGA DEL DATO A ENVIAR
-00002d b90c                      		OUT			UDR,R16
-00002e 940e 0063                 		CALL		VACIADO
+00001d 940e 002a                 	CALL		USART
+00001f 940e 0026                 	CALL		VACIADO	
+000021 940e 0046                 	CALL		TEMPORIZADOR
+000023 9478                      	SEI
                                  
-                                 		TX_DATO_12:
-000030 9b5e                      			SBIS		UCSRA,6
-000031 940c 0030                 			JMP			TX_DATO_12
-000033 9a5e                      			SBI			UCSRA,6	
-000034 e006                      			LDI			R16,0X06		;CARGA DEL DATO A ENVIAR
-000035 b90c                      			OUT			UDR,R16
-000036 940e 0063                 			CALL		VACIADO
-                                 
-                                 			TX_DATO_13:
-000038 9b5e                      				SBIS		UCSRA,6
-000039 940c 0038                 				JMP			TX_DATO_13
-00003b 9a5e                      				SBI			UCSRA,6	
-00003c e60c                      				LDI			R16,0X6C		;CARGA DEL DATO A ENVIAR
-00003d b90c                      				OUT			UDR,R16
-00003e 940e 0063                 				CALL		VACIADO
-000040 940e 0072                 				CALL		RETRASO				
-                                 
-                                 TX_DATO_20:
-000042 e301                      	LDI			R16,0X31			;CARGA DEL DATO A ENVIAR
-000043 b90c                      	OUT			UDR,R16
-000044 940e 0063                 	CALL		VACIADO
-                                 	
-                                 	TX_DATO_21:
-000046 9b5e                      		SBIS		UCSRA,6
-000047 940c 0046                 		JMP			TX_DATO_21
-000049 9a5e                      		SBI			UCSRA,6	
-00004a e002                      		LDI			R16,0X02		;CARGA DEL DATO A ENVIAR
-00004b b90c                      		OUT			UDR,R16
-00004c 940e 0063                 		CALL		VACIADO
-                                 
-                                 		TX_DATO_22:
-00004e 9b5e                      			SBIS		UCSRA,6
-00004f 940c 004e                 			JMP			TX_DATO_22
-000051 9a5e                      			SBI			UCSRA,6	
-000052 e006                      			LDI			R16,0X06		;CARGA DEL DATO A ENVIAR
-000053 b90c                      			OUT			UDR,R16
-000054 940e 0063                 			CALL		VACIADO
-                                 
-                                 			TX_DATO_23:
-000056 9b5e                      				SBIS		UCSRA,6
-000057 940c 0056                 				JMP			TX_DATO_23
-000059 9a5e                      				SBI			UCSRA,6	
-00005a e309                      				LDI			R16,0X39		;CARGA DEL DATO A ENVIAR
-00005b b90c                      				OUT			UDR,R16
-00005c 940e 0063                 				CALL		VACIADO
-                                 
-00005e 98a8                      	CBI			PORTC,0
-00005f 940e 0072                 	CALL		RETRASO
-000061 940c 0023                 	JMP			TX_DATO_10
+                                 ESPERA:
+000024 940c 0024                 	JMP			ESPERA
                                  
                                  ;F U N C I O N E S
                                  
                                  ;VACIADO DE UDR
                                  VACIADO:
-000063 9b5d                      	SBIS		UCSRA,5
-000064 940c 0063                 	JMP			VACIADO
-000066 9508                      	RET
+000026 9b5d                      	SBIS		UCSRA,5
+000027 940c 0026                 	JMP			VACIADO
+000029 9508                      	RET
                                  
                                  ;CONFIGURACION DEL MODULO USART
                                  USART:
-000067 e000                      	LDI			R16,0B00000000
-000068 bd00                      	OUT			UBRRH,R16			
+00002a e000                      	LDI			R16,0B00000000
+00002b bd00                      	OUT			UBRRH,R16			
                                  	;LDI			R16,0B00000110	;9600 BAUDIOS
                                  	;LDI			R16,0B00000000	;57600 BAUDIOS
-000069 e109                      	LDI			R16,0B00011001	;2400 BAUDIOS
-00006a b909                      	OUT			UBRRL,R16			
-00006b e000                      	LDI			R16,0B00000000
-00006c b90b                      	OUT			UCSRA,R16
-00006d e806                      	LDI			R16,0B10000110
-00006e bd00                      	OUT			UCSRC,R16
-00006f e008                      	LDI			R16,0B00001000		;HABILITO TRANSMISION
-000070 b90a                      	OUT			UCSRB,R16
-                                 	;CALL		CAD
-000071 9508                      	RET
+00002c e109                      	LDI			R16,0B00011001	;2400 BAUDIOS
+00002d b909                      	OUT			UBRRL,R16			
+00002e e000                      	LDI			R16,0B00000000
+00002f b90b                      	OUT			UCSRA,R16
+000030 e806                      	LDI			R16,0B10000110
+000031 bd00                      	OUT			UCSRC,R16
+000032 e008                      	LDI			R16,0B00001000		;HABILITO TRANSMISION
+000033 b90a                      	OUT			UCSRB,R16
+000034 9508                      	RET
                                  
                                  ;RETRASO DE TRANSMISION ENTRE BYTES
                                  RETRASO:
                                  	;LDI			R19,SREG			;AGREGADO
-000072 e00d                      	LDI			R16,0B00001101		;PRESCALER DE 1024
-000073 bf03                      	OUT			TCCR0,R16
-000074 e000                      	LDI			R16,0B00000000
-000075 bf09                      	OUT			TIMSK,R16
-000076 ef0f                      	LDI			R16,0B11111111		;TIEMPO DE RETRASO
-000077 bf0c                      	OUT			OCR0,R16
+000035 e00d                      	LDI			R16,0B00001101		;PRESCALER DE 1024
+000036 bf03                      	OUT			TCCR0,R16
+                                 	;LDI			R16,0B00000000
+                                 	;OUT			TIMSK,R16
+000037 ef0f                      	LDI			R16,0B11111111		;TIEMPO DE RETRASO
+000038 bf0c                      	OUT			OCR0,R16
+                                 
+                                 ESPERACOMP:
+000039 b728                      	IN			R18,TIFR
+00003a ff21                      	SBRS		R18,1
+00003b 940c 0039                 	JMP			ESPERACOMP
+                                 	;LDI			R16,0B00000010
+00003d bf08                      	OUT			TIFR,R16
+00003e e000                      	LDI			R16,0B00000000
+00003f bf03                      	OUT			TCCR0,R16
+000040 bf08                      	OUT			TIFR,R16
+000041 bf0c                      	OUT			OCR0,R16
+000042 bf02                      	OUT			TCNT0,R16
+000043 e020                      	LDI			R18,0B00000000
+000044 0000                      	NOP
+000045 9508                      	RET
                                  
                                  TEMPORIZADOR:
-000078 e000                      	LDI			R16,0B00000000
-000079 bd0b                      	OUT			OCR1AH,R16
-00007a e00f                      	LDI			R16,0B00001111
-00007b bd0a                      	OUT			OCR1AL,R16
-00007c e000                      	LDI			R16,0B00000000
-00007d bd0f                      	OUT			TCCR1A,R16
-00007e e009                      	LDI			R16,0B00001001
-00007f bd0e                      	OUT			TCCR1B,R16	
-000080 e100                      	LDI			R16,0B00010000
-000081 bf09                      	OUT			TIMSK,R16
-000082 9478                      	SEI
-                                 		
-                                 ESPERACOMP:
-000083 b728                      	IN			R18,TIFR
-000084 ff21                      	SBRS		R18,1
-000085 940c 0083                 	JMP			ESPERACOMP
-000087 e002                      	LDI			R16,0B00000010
-000088 bf08                      	OUT			TIFR,R16
-000089 e000                      	LDI			R16,0B00000000
-00008a bf03                      	OUT			TCCR0,R16
-00008b bf08                      	OUT			TIFR,R16
-00008c bf0c                      	OUT			OCR0,R16
-00008d bf02                      	OUT			TCNT0,R16
-00008e e020                      	LDI			R18,0B00000000
-00008f 0000                      	NOP
-000090 9508                      	RET
+000046 e100                      	LDI			R16,0B00010000
+000047 bf09                      	OUT			TIMSK,R16	
+000048 ef0f                      	LDI			R16,0B11111111
+000049 bd0b                      	OUT			OCR1AH,R16
+00004a ef0f                      	LDI			R16,0B11111111
+00004b bd0a                      	OUT			OCR1AL,R16
+00004c e000                      	LDI			R16,0B00000000
+00004d bd0f                      	OUT			TCCR1A,R16
+00004e e009                      	LDI			R16,0B00001001
+00004f bd0e                      	OUT			TCCR1B,R16
+000050 9508                      	RET	
                                  
                                  TX:
-000091 e31f                      	LDI			R17,SREG
-000092 94f8                      	CLI
-000093 9aa9                      	SBI			PORTC,1
-000094 e100                      	LDI			R16,0B00010000
-000095 bf09                      	OUT			TIMSK,R16
-000096 bf1f                      	OUT			SREG,R17
-000097 9478                      	SEI
-000098 9518                      	RETI
+000051 e31f                      	LDI			R17,SREG
+000052 94f8                      	CLI
+000053 9aa9                      	SBI			PORTC,1
+                                 
+                                 TX_DATO_10:	
+000054 9aa8                      	SBI			PORTC,0					;INICIO TX
+000055 e301                      	LDI			R16,0X31				;CARGA DEL DATO A ENVIAR
+000056 b90c                      	OUT			UDR,R16
+000057 940e 0026                 	CALL		VACIADO
+                                 	
+                                 	TX_DATO_11:
+000059 9b5e                      		SBIS		UCSRA,6
+00005a 940c 0059                 		JMP			TX_DATO_11
+00005c 9a5e                      		SBI			UCSRA,6	
+00005d e001                      		LDI			R16,0X01		;CARGA DEL DATO A ENVIAR
+00005e b90c                      		OUT			UDR,R16
+00005f 940e 0026                 		CALL		VACIADO
+                                 
+                                 		TX_DATO_12:
+000061 9b5e                      			SBIS		UCSRA,6
+000062 940c 0061                 			JMP			TX_DATO_12
+000064 9a5e                      			SBI			UCSRA,6	
+000065 e006                      			LDI			R16,0X06		;CARGA DEL DATO A ENVIAR
+000066 b90c                      			OUT			UDR,R16
+000067 940e 0026                 			CALL		VACIADO
+                                 
+                                 			TX_DATO_13:
+000069 9b5e                      				SBIS		UCSRA,6
+00006a 940c 0069                 				JMP			TX_DATO_13
+00006c 9a5e                      				SBI			UCSRA,6	
+00006d e60c                      				LDI			R16,0X6C		;CARGA DEL DATO A ENVIAR
+00006e b90c                      				OUT			UDR,R16
+00006f 940e 0026                 				CALL		VACIADO
+000071 940e 0035                 				CALL		RETRASO				
+                                 
+                                 TX_DATO_20:
+000073 e301                      	LDI			R16,0X31			;CARGA DEL DATO A ENVIAR
+000074 b90c                      	OUT			UDR,R16
+000075 940e 0026                 	CALL		VACIADO
+                                 	
+                                 	TX_DATO_21:
+000077 9b5e                      		SBIS		UCSRA,6
+000078 940c 0077                 		JMP			TX_DATO_21
+00007a 9a5e                      		SBI			UCSRA,6	
+00007b e002                      		LDI			R16,0X02		;CARGA DEL DATO A ENVIAR
+00007c b90c                      		OUT			UDR,R16
+00007d 940e 0026                 		CALL		VACIADO
+                                 
+                                 		TX_DATO_22:
+00007f 9b5e                      			SBIS		UCSRA,6
+000080 940c 007f                 			JMP			TX_DATO_22
+000082 9a5e                      			SBI			UCSRA,6	
+000083 e006                      			LDI			R16,0X06		;CARGA DEL DATO A ENVIAR
+000084 b90c                      			OUT			UDR,R16
+000085 940e 0026                 			CALL		VACIADO
+                                 
+                                 			TX_DATO_23:
+000087 9b5e                      				SBIS		UCSRA,6
+000088 940c 0087                 				JMP			TX_DATO_23
+00008a 9a5e                      				SBI			UCSRA,6	
+00008b e309                      				LDI			R16,0X39		;CARGA DEL DATO A ENVIAR
+00008c b90c                      				OUT			UDR,R16
+00008d 940e 0026                 				CALL		VACIADO
+                                 
+00008f 98a8                      	CBI			PORTC,0
+000090 940e 0035                 	CALL		RETRASO
+000092 e100                      	LDI			R16,0B00010000
+000093 bf09                      	OUT			TIMSK,R16
+000094 bf1f                      	OUT			SREG,R17
+000095 9478                      	SEI
+000096 9518                      	RETI
 
 
 RESOURCE USE INFORMATION
@@ -1107,7 +1106,7 @@ counted separately from r26..r31 here.
 "ATmega16A" register use summary:
 x  :   0 y  :   0 z  :   0 r0 :   0 r1 :   0 r2 :   0 r3 :   0 r4 :   0 
 r5 :   0 r6 :   0 r7 :   0 r8 :   0 r9 :   0 r10:   0 r11:   0 r12:   0 
-r13:   0 r14:   0 r15:   0 r16:  63 r17:   3 r18:   4 r19:   1 r20:   0 
+r13:   0 r14:   0 r15:   0 r16:  60 r17:   3 r18:   4 r19:   1 r20:   0 
 r21:   0 r22:   0 r23:   0 r24:   0 r25:   0 r26:   0 r27:   0 r28:   0 
 r29:   0 r30:   0 r31:   0 
 Registers used: 4 out of 35 (11.4%)
@@ -1123,10 +1122,10 @@ clc   :   0 clh   :   0 cli   :   1 cln   :   0 clr   :   3 cls   :   0
 clt   :   0 clv   :   0 clz   :   0 com   :   0 cp    :   0 cpc   :   0 
 cpi   :   0 cpse  :   0 dec   :   0 eor   :   0 fmul  :   0 fmuls :   0 
 fmulsu:   0 icall :   0 ijmp  :   0 in    :   1 inc   :   0 jmp   :  11 
-ld    :   0 ldd   :   0 ldi   :  32 lds   :   0 lpm   :   0 lsl   :   0 
+ld    :   0 ldd   :   0 ldi   :  30 lds   :   0 lpm   :   0 lsl   :   0 
 lsr   :   0 mov   :   0 movw  :   0 mul   :   0 muls  :   0 mulsu :   0 
-neg   :   0 nop   :   1 or    :   0 ori   :   0 out   :  34 pop   :   0 
-push  :   0 rcall :   0 ret   :   3 reti  :   1 rjmp  :   0 rol   :   0 
+neg   :   0 nop   :   1 or    :   0 ori   :   0 out   :  33 pop   :   0 
+push  :   0 rcall :   0 ret   :   4 reti  :   1 rjmp  :   0 rol   :   0 
 ror   :   0 sbc   :   0 sbci  :   0 sbi   :   8 sbic  :   0 sbis  :   7 
 sbiw  :   0 sbr   :   0 sbrc  :   0 sbrs  :   1 sec   :   0 seh   :   0 
 sei   :   2 sen   :   0 ser   :   0 ses   :   0 set   :   0 sev   :   0 
@@ -1137,7 +1136,7 @@ Instructions used: 15 out of 113 (13.3%)
 "ATmega16A" memory use summary [bytes]:
 Segment   Begin    End      Code   Data   Used    Size   Use%
 ---------------------------------------------------------------
-[.cseg] 0x000000 0x000132    286      0    286   16384   1.7%
+[.cseg] 0x000000 0x00012e    282      0    282   16384   1.7%
 [.dseg] 0x000060 0x000060      0      0      0    1024   0.0%
 [.eseg] 0x000000 0x000000      0      0      0     512   0.0%
 
