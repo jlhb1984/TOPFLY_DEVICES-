@@ -106,7 +106,7 @@ TX:
 	INC			R19
 
 PRESCALER:
-	SBRS		R19,2
+	SBRS		R19,0					;Cambio de prescaler a 1 minuto aprox.
 	JMP			FIN
 
 TX_DATO_10:	
