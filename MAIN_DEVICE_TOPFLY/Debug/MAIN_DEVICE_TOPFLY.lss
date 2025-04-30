@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.2.8  C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\MAIN_DEVICE_TOPFLY\MAIN_DEVICE_TOPFLY\main.asm Wed Apr 30 17:35:17 2025
+AVRASM ver. 2.2.8  C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\MAIN_DEVICE_TOPFLY\MAIN_DEVICE_TOPFLY\main.asm Wed Apr 30 17:42:25 2025
 
 [builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m16Adef.inc'
 C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\MAIN_DEVICE_TOPFLY\MAIN_DEVICE_TOPFLY\main.asm(11): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\M16ADEF.INC'
@@ -1025,7 +1025,7 @@ C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\MAI
 000057 9533                      	INC			R19
                                  
                                  PRESCALER:
-000058 ff32                      	SBRS		R19,2					;Prescaler normal en main.
+000058 ff31                      	SBRS		R19,1					;Prescaler normal en main.
 000059 940c 00b1                 	JMP			FIN
                                  
                                  TX_DATO_10:	

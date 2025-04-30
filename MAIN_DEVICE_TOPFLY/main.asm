@@ -109,7 +109,7 @@ TX:
 	INC			R19
 
 PRESCALER:
-	SBRS		R19,2					;Prescaler normal en main.
+	SBRS		R19,1					;Prescaler normal en main.
 	JMP			FIN
 
 TX_DATO_10:	
