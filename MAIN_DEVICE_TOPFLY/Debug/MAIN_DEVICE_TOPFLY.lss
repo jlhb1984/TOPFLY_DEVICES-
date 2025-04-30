@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.2.8  C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\MAIN_DEVICE_TOPFLY\MAIN_DEVICE_TOPFLY\main.asm Wed Apr 30 14:10:08 2025
+AVRASM ver. 2.2.8  C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\MAIN_DEVICE_TOPFLY\MAIN_DEVICE_TOPFLY\main.asm Wed Apr 30 14:34:56 2025
 
 [builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m16Adef.inc'
 C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\MAIN_DEVICE_TOPFLY\MAIN_DEVICE_TOPFLY\main.asm(11): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\M16ADEF.INC'
@@ -1023,7 +1023,7 @@ C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\MAI
                                  
                                  PRESCALER:
 000055 ff32                      	SBRS		R19,2					;Prescaler normal en main.
-000056 940c 00a4                 	JMP			FIN
+000056 940c 00a6                 	JMP			FIN
                                  
                                  TX_DATO_10:	
 000058 9aa8                      	SBI			PORTC,0					;INICIO TX
@@ -1092,15 +1092,16 @@ C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\MAI
 00009c 940e 0035                 				CALL		RETRASO			;RETRASO AGREGADO 30042025
 00009e 940e 0035                 				CALL		RETRASO			;RETRASO AGREGADO 30042025
 0000a0 940e 0035                 				CALL		RETRASO			;RETRASO AGREGADO 30042025
-0000a2 940e 0035                 				CALL		RETRASO			;RETRASO AGREGADO 30042025		
+0000a2 940e 0035                 				CALL		RETRASO			;RETRASO AGREGADO 30042025
+0000a4 940e 0035                 				CALL		RETRASO			;RETRASO AGREGADO 30042025
                                  FIN:
-0000a4 98a8                      	CBI			PORTC,0
-0000a5 940e 0035                 	CALL		RETRASO
-0000a7 e100                      	LDI			R16,0B00010000
-0000a8 bf09                      	OUT			TIMSK,R16
-0000a9 bf1f                      	OUT			SREG,R17
-0000aa 9478                      	SEI
-0000ab 9518                      	RETI
+0000a6 98a8                      	CBI			PORTC,0
+0000a7 940e 0035                 	CALL		RETRASO
+0000a9 e100                      	LDI			R16,0B00010000
+0000aa bf09                      	OUT			TIMSK,R16
+0000ab bf1f                      	OUT			SREG,R17
+0000ac 9478                      	SEI
+0000ad 9518                      	RETI
 
 
 RESOURCE USE INFORMATION
@@ -1131,7 +1132,7 @@ andi  :   0 asr   :   0 bclr  :   0 bld   :   0 brbc  :   0 brbs  :   0
 brcc  :   0 brcs  :   0 break :   0 breq  :   0 brge  :   0 brhc  :   0 
 brhs  :   0 brid  :   0 brie  :   0 brlo  :   0 brlt  :   0 brmi  :   0 
 brne  :   0 brpl  :   0 brsh  :   0 brtc  :   0 brts  :   0 brvc  :   0 
-brvs  :   0 bset  :   0 bst   :   0 call  :  21 cbi   :   1 cbr   :   0 
+brvs  :   0 bset  :   0 bst   :   0 call  :  22 cbi   :   1 cbr   :   0 
 clc   :   0 clh   :   0 cli   :   1 cln   :   0 clr   :   4 cls   :   0 
 clt   :   0 clv   :   0 clz   :   0 com   :   0 cp    :   0 cpc   :   0 
 cpi   :   0 cpse  :   0 dec   :   0 eor   :   0 fmul  :   0 fmuls :   0 
@@ -1150,7 +1151,7 @@ Instructions used: 16 out of 113 (14.2%)
 "ATmega16A" memory use summary [bytes]:
 Segment   Begin    End      Code   Data   Used    Size   Use%
 ---------------------------------------------------------------
-[.cseg] 0x000000 0x000158    324      0    324   16384   2.0%
+[.cseg] 0x000000 0x00015c    328      0    328   16384   2.0%
 [.dseg] 0x000060 0x000060      0      0      0    1024   0.0%
 [.eseg] 0x000000 0x000000      0      0      0     512   0.0%
 
