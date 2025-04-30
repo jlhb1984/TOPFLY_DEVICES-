@@ -106,7 +106,7 @@ TX:
 	INC			R19
 
 PRESCALER:
-	SBRS		R19,0					;Cambio de prescaler a 1 minuto aprox.
+	SBRS		R19,2					;Prescaler normal en main.
 	JMP			FIN
 
 TX_DATO_10:	
@@ -138,7 +138,8 @@ TX_DATO_10:
 				LDI			R16,0X6C		;CARGA DEL DATO A ENVIAR
 				OUT			UDR,R16
 				CALL		VACIADO
-				CALL		RETRASO				
+				CALL		RETRASO
+				CALL		RETRASO			;NUEVO RETRASO AGREGADO				
 
 TX_DATO_20:
 	LDI			R16,0X31			;CARGA DEL DATO A ENVIAR

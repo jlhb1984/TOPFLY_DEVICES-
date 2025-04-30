@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.2.8  C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\MAIN_DEVICE_TOPFLY\MAIN_DEVICE_TOPFLY\main.asm Fri Apr 25 23:17:32 2025
+AVRASM ver. 2.2.8  C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\MAIN_DEVICE_TOPFLY\MAIN_DEVICE_TOPFLY\main.asm Wed Apr 30 11:34:48 2025
 
 [builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m16Adef.inc'
 C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\MAIN_DEVICE_TOPFLY\MAIN_DEVICE_TOPFLY\main.asm(11): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\M16ADEF.INC'
@@ -1022,8 +1022,8 @@ C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\MAI
 000054 9533                      	INC			R19
                                  
                                  PRESCALER:
-000055 ff32                      	SBRS		R19,2
-000056 940c 0094                 	JMP			FIN
+000055 ff32                      	SBRS		R19,2					;Prescaler normal en main.
+000056 940c 0096                 	JMP			FIN
                                  
                                  TX_DATO_10:	
 000058 9aa8                      	SBI			PORTC,0					;INICIO TX
@@ -1054,46 +1054,47 @@ C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\MAI
 000071 e60c                      				LDI			R16,0X6C		;CARGA DEL DATO A ENVIAR
 000072 b90c                      				OUT			UDR,R16
 000073 940e 0026                 				CALL		VACIADO
-000075 940e 0035                 				CALL		RETRASO				
+000075 940e 0035                 				CALL		RETRASO
+000077 940e 0035                 				CALL		RETRASO			;NUEVO RETRASO AGREGADO				
                                  
                                  TX_DATO_20:
-000077 e301                      	LDI			R16,0X31			;CARGA DEL DATO A ENVIAR
-000078 b90c                      	OUT			UDR,R16
-000079 940e 0026                 	CALL		VACIADO
+000079 e301                      	LDI			R16,0X31			;CARGA DEL DATO A ENVIAR
+00007a b90c                      	OUT			UDR,R16
+00007b 940e 0026                 	CALL		VACIADO
                                  	
                                  	TX_DATO_21:
-00007b 9b5e                      		SBIS		UCSRA,6
-00007c 940c 007b                 		JMP			TX_DATO_21
-00007e 9a5e                      		SBI			UCSRA,6	
-00007f e002                      		LDI			R16,0X02		;CARGA DEL DATO A ENVIAR
-000080 b90c                      		OUT			UDR,R16
-000081 940e 0026                 		CALL		VACIADO
+00007d 9b5e                      		SBIS		UCSRA,6
+00007e 940c 007d                 		JMP			TX_DATO_21
+000080 9a5e                      		SBI			UCSRA,6	
+000081 e002                      		LDI			R16,0X02		;CARGA DEL DATO A ENVIAR
+000082 b90c                      		OUT			UDR,R16
+000083 940e 0026                 		CALL		VACIADO
                                  
                                  		TX_DATO_22:
-000083 9b5e                      			SBIS		UCSRA,6
-000084 940c 0083                 			JMP			TX_DATO_22
-000086 9a5e                      			SBI			UCSRA,6	
-000087 e006                      			LDI			R16,0X06		;CARGA DEL DATO A ENVIAR
-000088 b90c                      			OUT			UDR,R16
-000089 940e 0026                 			CALL		VACIADO
+000085 9b5e                      			SBIS		UCSRA,6
+000086 940c 0085                 			JMP			TX_DATO_22
+000088 9a5e                      			SBI			UCSRA,6	
+000089 e006                      			LDI			R16,0X06		;CARGA DEL DATO A ENVIAR
+00008a b90c                      			OUT			UDR,R16
+00008b 940e 0026                 			CALL		VACIADO
                                  
                                  			TX_DATO_23:
-00008b 9b5e                      				SBIS		UCSRA,6
-00008c 940c 008b                 				JMP			TX_DATO_23
-00008e 9a5e                      				SBI			UCSRA,6	
-00008f e309                      				LDI			R16,0X39		;CARGA DEL DATO A ENVIAR
-000090 b90c                      				OUT			UDR,R16
-000091 940e 0026                 				CALL		VACIADO
-000093 2733                      				CLR			R19
+00008d 9b5e                      				SBIS		UCSRA,6
+00008e 940c 008d                 				JMP			TX_DATO_23
+000090 9a5e                      				SBI			UCSRA,6	
+000091 e309                      				LDI			R16,0X39		;CARGA DEL DATO A ENVIAR
+000092 b90c                      				OUT			UDR,R16
+000093 940e 0026                 				CALL		VACIADO
+000095 2733                      				CLR			R19
                                  
                                  FIN:
-000094 98a8                      	CBI			PORTC,0
-000095 940e 0035                 	CALL		RETRASO
-000097 e100                      	LDI			R16,0B00010000
-000098 bf09                      	OUT			TIMSK,R16
-000099 bf1f                      	OUT			SREG,R17
-00009a 9478                      	SEI
-00009b 9518                      	RETI
+000096 98a8                      	CBI			PORTC,0
+000097 940e 0035                 	CALL		RETRASO
+000099 e100                      	LDI			R16,0B00010000
+00009a bf09                      	OUT			TIMSK,R16
+00009b bf1f                      	OUT			SREG,R17
+00009c 9478                      	SEI
+00009d 9518                      	RETI
 
 
 RESOURCE USE INFORMATION
@@ -1124,7 +1125,7 @@ andi  :   0 asr   :   0 bclr  :   0 bld   :   0 brbc  :   0 brbs  :   0
 brcc  :   0 brcs  :   0 break :   0 breq  :   0 brge  :   0 brhc  :   0 
 brhs  :   0 brid  :   0 brie  :   0 brlo  :   0 brlt  :   0 brmi  :   0 
 brne  :   0 brpl  :   0 brsh  :   0 brtc  :   0 brts  :   0 brvc  :   0 
-brvs  :   0 bset  :   0 bst   :   0 call  :  13 cbi   :   1 cbr   :   0 
+brvs  :   0 bset  :   0 bst   :   0 call  :  14 cbi   :   1 cbr   :   0 
 clc   :   0 clh   :   0 cli   :   1 cln   :   0 clr   :   4 cls   :   0 
 clt   :   0 clv   :   0 clz   :   0 com   :   0 cp    :   0 cpc   :   0 
 cpi   :   0 cpse  :   0 dec   :   0 eor   :   0 fmul  :   0 fmuls :   0 
@@ -1143,7 +1144,7 @@ Instructions used: 16 out of 113 (14.2%)
 "ATmega16A" memory use summary [bytes]:
 Segment   Begin    End      Code   Data   Used    Size   Use%
 ---------------------------------------------------------------
-[.cseg] 0x000000 0x000138    292      0    292   16384   1.8%
+[.cseg] 0x000000 0x00013c    296      0    296   16384   1.8%
 [.dseg] 0x000060 0x000060      0      0      0    1024   0.0%
 [.eseg] 0x000000 0x000000      0      0      0     512   0.0%
 
