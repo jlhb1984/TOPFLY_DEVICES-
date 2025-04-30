@@ -32,14 +32,14 @@
   <RETRASO><FILE>C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\MAIN_DEVICE_TOPFLY\MAIN_DEVICE_TOPFLY\main.asm</FILE><LINE>65</LINE></RETRASO>
   <ESPERACOMP><FILE>C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\MAIN_DEVICE_TOPFLY\MAIN_DEVICE_TOPFLY\main.asm</FILE><LINE>74</LINE></ESPERACOMP>
   <PRESCALER><FILE>C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\MAIN_DEVICE_TOPFLY\MAIN_DEVICE_TOPFLY\main.asm</FILE><LINE>108</LINE></PRESCALER>
-  <FIN><FILE>C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\MAIN_DEVICE_TOPFLY\MAIN_DEVICE_TOPFLY\main.asm</FILE><LINE>174</LINE></FIN>
+  <FIN><FILE>C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\MAIN_DEVICE_TOPFLY\MAIN_DEVICE_TOPFLY\main.asm</FILE><LINE>175</LINE></FIN>
   <TX_DATO_10><FILE>C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\MAIN_DEVICE_TOPFLY\MAIN_DEVICE_TOPFLY\main.asm</FILE><LINE>112</LINE></TX_DATO_10>
   <TX_DATO_11><FILE>C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\MAIN_DEVICE_TOPFLY\MAIN_DEVICE_TOPFLY\main.asm</FILE><LINE>118</LINE></TX_DATO_11>
   <TX_DATO_12><FILE>C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\MAIN_DEVICE_TOPFLY\MAIN_DEVICE_TOPFLY\main.asm</FILE><LINE>126</LINE></TX_DATO_12>
   <TX_DATO_13><FILE>C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\MAIN_DEVICE_TOPFLY\MAIN_DEVICE_TOPFLY\main.asm</FILE><LINE>134</LINE></TX_DATO_13>
-  <TX_DATO_20><FILE>C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\MAIN_DEVICE_TOPFLY\MAIN_DEVICE_TOPFLY\main.asm</FILE><LINE>144</LINE></TX_DATO_20>
-  <TX_DATO_21><FILE>C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\MAIN_DEVICE_TOPFLY\MAIN_DEVICE_TOPFLY\main.asm</FILE><LINE>149</LINE></TX_DATO_21>
-  <TX_DATO_22><FILE>C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\MAIN_DEVICE_TOPFLY\MAIN_DEVICE_TOPFLY\main.asm</FILE><LINE>157</LINE></TX_DATO_22>
-  <TX_DATO_23><FILE>C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\MAIN_DEVICE_TOPFLY\MAIN_DEVICE_TOPFLY\main.asm</FILE><LINE>165</LINE></TX_DATO_23>
+  <TX_DATO_20><FILE>C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\MAIN_DEVICE_TOPFLY\MAIN_DEVICE_TOPFLY\main.asm</FILE><LINE>145</LINE></TX_DATO_20>
+  <TX_DATO_21><FILE>C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\MAIN_DEVICE_TOPFLY\MAIN_DEVICE_TOPFLY\main.asm</FILE><LINE>150</LINE></TX_DATO_21>
+  <TX_DATO_22><FILE>C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\MAIN_DEVICE_TOPFLY\MAIN_DEVICE_TOPFLY\main.asm</FILE><LINE>158</LINE></TX_DATO_22>
+  <TX_DATO_23><FILE>C:\Users\Jose Luis Hurtado\OneDrive - TSO MOBILE\Documentos\Atmel Studio\7.0\MAIN_DEVICE_TOPFLY\MAIN_DEVICE_TOPFLY\main.asm</FILE><LINE>166</LINE></TX_DATO_23>
  </LABELS>
 </ASSEMBLER_INFO>
